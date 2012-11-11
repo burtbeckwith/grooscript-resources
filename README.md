@@ -22,14 +22,14 @@ answer :)
 2. You must declare the dependency of the 'grooscript' module in those modules you're declaring any
 groovy scripts.
 
-	modules = {
-		myGroovyFiles{
-			dependsOn 'grooscript'
-
-			resource url:'js/gs/Car.gs'
-			resource url:'js/gs/Bike.gs'
+		modules = {
+			myGroovyFiles{
+				dependsOn 'grooscript'
+				
+				resource url:'js/gs/Car.gs'
+				resource url:'js/gs/Bike.gs'
+			}
 		}
-	}
 
 3. Enjoy coding Groovy in the client side ;)
 
