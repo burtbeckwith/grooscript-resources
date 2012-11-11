@@ -1,8 +1,11 @@
+import org.grails.plugin.resource.ResourceProcessor
+import org.grails.plugin.resource.ResourceTagLib
+
 class GrooscriptResourcesGrailsPlugin {
     // the plugin version
     def version = "0.1"
     // the version or versions of Grails the plugin is designed for
-    def grailsVersion = "2.1 > *"
+    def grailsVersion = "2.0 > *"
     // the other plugins this plugin depends on
     def dependsOn = [:]
     // resources that are excluded from plugin packaging
@@ -12,10 +15,10 @@ class GrooscriptResourcesGrailsPlugin {
 
     // TODO Fill in these fields
     def title = "Grooscript Resources Plugin" // Headline display name of the plugin
-    def author = "Your name"
+    def author = "Mario Garcia"
     def authorEmail = ""
     def description = '''\
-Brief summary/description of the plugin.
+This plugin compiles groovy static resources to javascript
 '''
 
     // URL to the plugin's documentation
@@ -24,7 +27,7 @@ Brief summary/description of the plugin.
     // Extra (optional) plugin metadata
 
     // License: one of 'APACHE', 'GPL2', 'GPL3'
-//    def license = "APACHE"
+    def license = "APACHE"
 
     // Details of company behind the plugin (if there is one)
 //    def organization = [ name: "My Company", url: "http://www.my-company.com/" ]
@@ -44,6 +47,8 @@ Brief summary/description of the plugin.
 
     def doWithSpring = {
         // TODO Implement runtime spring config (optional)
+		ResourceTagLib.SUPPORTED_TYPES['gs'] = [type:'text/javascript', writer:'js']
+		ResourceProcessor.DEFAULT_MODULE_SETTINGS['gs'] = [disposition: 'defer']
     }
 
     def doWithDynamicMethods = { ctx ->

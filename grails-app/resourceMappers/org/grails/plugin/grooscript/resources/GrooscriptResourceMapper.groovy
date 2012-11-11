@@ -1,5 +1,7 @@
 package org.grails.plugins.grooscript.resources
 
+import groovy.util.logging.Log4j
+
 import org.yila.gscript.GsConverter
 
 import org.grails.plugin.resource.mapper.MapperPhase
@@ -14,18 +16,19 @@ import org.codehaus.groovy.grails.plugins.support.aware.GrailsApplicationAware
  * @since 0.1
  * 
  **/
+@Log4j
 class GrooscriptResourceMapper implements GrailsApplicationAware {
 	
 	GrailsApplication grailsApplication
 	
 	static final GROOSCRIPT_EXTENSION = '.gs'
-	static final JAVASCRIPT_EXTENSION = '.js'
-	
+	static final JAVASCRIPT_EXTENSION = '.js'	
 	static final GROOSCRIPT_PATTERN = /(?i)\.gs/
 	
-	def phase = MapperPhase.GENERATION
-	def defaultIncludes = ['**/*.gs'] 	
+	static defaultIncludes = ['**/*.gs']
 	
+	def phase = MapperPhase.GENERATION
+	 	
 	/**
 	 * Implementing how the resource is going to be processed
 	 **/
@@ -40,7 +43,7 @@ class GrooscriptResourceMapper implements GrailsApplicationAware {
 			try {				
 			 /* Compiling groovy script to javascript */
 				log.debug "Compiling GrooScript file ${original} into ${target}"
-				String output = new GSConverter().toJs(input.text)
+				String output = new GsConverter().toJs(input.text)
 			 /* Writing the javascript */
 				target << output
 			 /* Keeping Grails posted */
