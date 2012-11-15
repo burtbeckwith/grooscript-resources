@@ -12,7 +12,13 @@ eventCompileStart = {
 	def fileName = "grooscript.js"
 	def inputStream = classLoader.getResourceAsStream("js/${fileName}") 
 	def outputFile = new File("${basedir}/web-app/js/grooscript/${fileName}")
- /* Delete if previous version exists */
+	def outputFileParent = outputFile.parentFile
+ /* If the folder where we're going to copy the resource doesn't exists
+  * it must be created */
+	if (!outputFileParent.exists()){
+		outputFileParent.mkdirs()
+	}
+ /* Delete if a previous version of the file exists */
 	if (outputFile.exists()){
 		def couldBeDeleted = outputFile.delete()
 		if (!couldBeDeleted){
