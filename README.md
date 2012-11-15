@@ -4,12 +4,6 @@ Grooscript Resources Plugin
 This plugin enables you to declare Groovy scripts as static resources and compile those scripts to Javascript code. That´s possible thanks to 
 the [Grooscript Project](http://www.grooscript.org/) 
 
-Dependencies
-============
-
-Because Grooscript is not still in any public repository, you must download the Grooscript project and put
-the GScript.jar in your Grails lib directory before going any further.
-
 Basic Usage
 ===========
 
