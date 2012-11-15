@@ -2,7 +2,7 @@ package org.grails.plugins.grooscript.resources
 
 import groovy.util.logging.Log4j
 
-import org.yila.gscript.GsConverter
+import org.grooscript.GsConverter
 
 import org.grails.plugin.resource.mapper.MapperPhase
 import org.codehaus.groovy.grails.commons.GrailsApplication

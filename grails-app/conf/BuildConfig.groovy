@@ -15,18 +15,18 @@ grails.project.dependency.resolution = {
         // from public Maven repositories
         //mavenLocal()
         //mavenCentral()
-        //mavenRepo "http://snapshots.repository.codehaus.org"
+        mavenRepo "http://oss.sonatype.org/content/groups/public/"
         //mavenRepo "http://repository.codehaus.org"
         //mavenRepo "http://download.java.net/maven/2/"
         //mavenRepo "http://repository.jboss.com/maven2/"
     }
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
-
-        // runtime 'mysql:mysql-connector-java:5.1.18'
+        runtime 'org.grooscript:grooscript:0.1'		
     }
 
     plugins {
+		runtime(":resources:1.1.6")
         build(":tomcat:$grailsVersion",
               ":release:2.0.3",
               ":rest-client-builder:1.0.2") {
