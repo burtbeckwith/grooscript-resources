@@ -1,7 +1,5 @@
 modules = {
-	
-	grooscript {		
+	grooscript {
 		resource url:'js/grooscript/grooscript.js'
 	}
-	
 }

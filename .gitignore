@@ -1,7 +1,8 @@
-.classpath
-.project
 .settings
-.class
 target
 target-eclipse
 grooscript.js
+web-app/WEB-INF
+plugin.xml
+*.log
+*.zip
