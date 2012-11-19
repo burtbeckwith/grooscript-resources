@@ -1,4 +1,4 @@
-package org.grails.plugins.grooscript.resources
+package org.grails.plugin.grooscript.resources
 
 import groovy.util.logging.Log4j
 
